@@ -15,9 +15,20 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.get('/cryptocurrency', async (req, res) => {
+    try {
+        coinData = await fetch(`https://api.coinranking.com/v1/public/coins`);
 
-app.get('/', (req, res) => {
-    return
+        const json = await coinData.json();
+        // console.log(json);
+        const [...coins] = json.data.coins
+        // console.log("coin", data);
+        res.render('cryptocurrency', {
+            coin: coins
+        })
+    } catch (error) {
+        console.log(error)
+    }
 });
 
 app.get('/cryptocurrency/coin-info/:coin_id', async (req, res) => {
@@ -46,22 +57,19 @@ app.get('/cryptocurrency/coin-info/:coin_id', async (req, res) => {
     };
 });
 
-
-app.get('/cryptocurrency', async (req, res) => {
+app.get('/shiba', async (req, res) => {
     try {
-        coinData = await fetch(`https://api.coinranking.com/v1/public/coins`);
+        shibuData = await fetch(`http://shibe.online/api/shibes?count=[1-100]&urls=true`);
 
-        const json = await coinData.json();
-        // console.log(json);
-        const [...coins] = json.data.coins
-        // console.log("coin", data);
-        res.render('cryptocurrency', {
-            coin: coins
+        const json = await shibuData.json();
+        const [...image] = json;
+
+        res.render('shiba', {
+            image: image,
         })
     } catch (error) {
-        console.log(error)
+        
     }
 });
-
 
 app.listen(2002);
