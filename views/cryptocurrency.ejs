@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cryptocurrency</title>
+    <?- include ('partials/head') ?>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+
+<body>
+    <?- include ('partials/navbar') ?>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Symbol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <? coin.forEach((item) => { ?>
+            <tr>
+                <th scope="row"><?= item.rank ?></th>
+                <td><a href="cryptocurrency/coin-info/<?= item.id ?>"><?= item.name ?></a></td>
+                <td><?= item.price ?></td>
+                <td><?= item.symbol ?></td>
+            </tr>
+            <? }) ?>
+
+        </tbody>
+    </table>
+    <?- include ('partials/footer') ?>
+</body>
+
+</html>

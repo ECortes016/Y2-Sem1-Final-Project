@@ -16,11 +16,11 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 
-app.get('/coin-info/', (req, res) => {
-return 	
+app.get('/', (req, res) => {
+    return
 });
 
-app.get('/coin-info/:coin_id', async (req, res) => {
+app.get('/cryptocurrency/coin-info/:coin_id', async (req, res) => {
     try {
         coinData = await fetch(`https://api.coinranking.com/v1/public/coin/${req.params.coin_id}`);
 
@@ -29,8 +29,6 @@ app.get('/coin-info/:coin_id', async (req, res) => {
 
 
         const { ...data } = json.data;
-        
-        console.log("coin", data.coin.socials);
 
         res.render('coin-info', {
             name: data.coin.name,
@@ -49,7 +47,7 @@ app.get('/coin-info/:coin_id', async (req, res) => {
 });
 
 
-app.get('/', async (req, res) => {
+app.get('/cryptocurrency', async (req, res) => {
     try {
         coinData = await fetch(`https://api.coinranking.com/v1/public/coins`);
 
@@ -57,7 +55,7 @@ app.get('/', async (req, res) => {
         // console.log(json);
         const [...coins] = json.data.coins
         // console.log("coin", data);
-        res.render('index', {
+        res.render('cryptocurrency', {
             coin: coins
         })
     } catch (error) {
