@@ -16,17 +16,6 @@
         <?= name ?>
       </h1>
       <h2 class="display-4"><?= sign ?> <span id="price"><?= price ?></span></h2>
-      <button id="tick">start price update</button>
-
-      <script type="text/javascript">
-        const price = document.getElementById("price");
-        const tick = document.getElementById("tick");
-        tick.addEventListener("load", function () {
-          setInterval(function () {
-            console.log("Hi")
-          }, 1000);
-        })
-      </script>
 
       <h2 class="display-4"><?= symbol ?></h2>
       <h3 class="display-4">Rank: <?= rank ?>
@@ -41,12 +30,11 @@
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social Media</a>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <? for(var type of socials) { ?>
-            <a class="dropdown-item" href="">
-              <?= type.type ?>
-            </a>
-            <? } ?>
+            <? socials.forEach((item) => { ?>
+            <a class="dropdown-item" href="<?= item.url ?>"> <?= item.name ?> </a>
+            <? }) ?>
           </div>
+
         </div>
       </p>
     </div>

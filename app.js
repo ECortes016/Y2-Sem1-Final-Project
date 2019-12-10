@@ -15,6 +15,11 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+
+app.get('/coin-info/', (req, res) => {
+return 	
+});
+
 app.get('/coin-info/:coin_id', async (req, res) => {
     try {
         coinData = await fetch(`https://api.coinranking.com/v1/public/coin/${req.params.coin_id}`);
@@ -23,17 +28,19 @@ app.get('/coin-info/:coin_id', async (req, res) => {
         // console.log(json);
 
 
-        // const { ...data } = json.data;
-        // console.log("coin", data);
+        const { ...data } = json.data;
+        
+        console.log("coin", data.coin.socials);
+
         res.render('coin-info', {
-            name: json.data.coin.name,
-            description: json.data.coin.description,
-            image: json.data.coin.iconUrl,
-            price: json.data.coin.price,
-            rank: json.data.coin.rank,
-            sign: json.data.base.sign,
-            symbol: json.data.base.symbol,
-            socials: json.data.coin.socials,
+            name: data.coin.name,
+            description: data.coin.description,
+            image: data.coin.iconUrl,
+            price: data.coin.price,
+            rank: data.coin.rank,
+            sign: data.base.sign,
+            symbol: data.base.symbol,
+            socials: data.coin.socials,
             // api: "Coinranking"
         })
     } catch (error) {
@@ -44,13 +51,15 @@ app.get('/coin-info/:coin_id', async (req, res) => {
 
 app.get('/', async (req, res) => {
     try {
-        coinData = await fetch(`https://api.coindesk.com/v1/bpi/currentprice.json`);
+        coinData = await fetch(`https://api.coinranking.com/v1/public/coins`);
 
         const json = await coinData.json();
         // console.log(json);
-
+        const [...coins] = json.data.coins
         // console.log("coin", data);
-        res.render('index', {})
+        res.render('index', {
+            coin: coins
+        })
     } catch (error) {
         console.log(error)
     }
