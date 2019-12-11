@@ -24,7 +24,9 @@ app.get('/cryptocurrency', async (req, res) => {
         const [...coins] = json.data.coins
         // console.log("coin", data);
         res.render('cryptocurrency', {
-            coin: coins
+            coin: coins,
+            api: 'Coinranking',
+            apiUrl: 'https://coinranking.com'
         })
     } catch (error) {
         console.log(error)
@@ -38,7 +40,6 @@ app.get('/cryptocurrency/coin-info/:coin_id', async (req, res) => {
         const json = await coinData.json();
         // console.log(json);
 
-
         const { ...data } = json.data;
 
         res.render('coin-info', {
@@ -50,7 +51,8 @@ app.get('/cryptocurrency/coin-info/:coin_id', async (req, res) => {
             sign: data.base.sign,
             symbol: data.base.symbol,
             socials: data.coin.socials,
-            // api: "Coinranking"
+            api: 'Coinranking',
+            apiUrl: 'coinranking.com'
         })
     } catch (error) {
         console.log(error)
@@ -61,14 +63,30 @@ app.get('/shiba', async (req, res) => {
     try {
         shibuData = await fetch(`http://shibe.online/api/shibes?count=[1-100]&urls=true`);
 
-        const json = await shibuData.json();
-        const [...image] = json;
+        const shibuJson = await shibuData.json();
+        const [...image] = shibuJson;
 
         res.render('shiba', {
             image: image,
+            api: 'shibe.online',
+            apiUrl: 'https://shibe.online/'
         })
     } catch (error) {
-        
+
+    }
+});
+
+app.get('/game-of-thrones', async (req, res) => {
+    try {
+        gotData = await fetch(`http://api.tvmaze.com/shows/82?embed=cast`);
+
+        const gotJson = await gotData.json();
+        const [...got] = gotJson._embedded.cast;
+        res.render('got', {
+            characters: got
+        })
+    } catch (error) {
+
     }
 });
 
