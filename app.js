@@ -76,14 +76,14 @@ app.get('/shiba', async (req, res) => {
     }
 });
 
-app.get('/game-of-thrones', async (req, res) => {
+app.get('/pokemon', async (req, res) => {
     try {
-        gotData = await fetch(`http://api.tvmaze.com/shows/82?embed=cast`);
+        pokeData = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=964`);
 
-        const gotJson = await gotData.json();
-        const [...got] = gotJson._embedded.cast;
-        res.render('got', {
-            characters: got
+        // const pokeJson = await pokeData.json();
+        // const [...pokemon] = pokeJson.results
+        res.render('pokemonHome', {
+            
         })
     } catch (error) {
 
