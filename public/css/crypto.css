@@ -1,0 +1,55 @@
+body {
+  background: #2A2A72;
+}
+
+.jumbotron-fluid {
+  color: white;
+  background-color: #98A6D4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.jumbotron-fluid h1 {
+  font-family: 'B612', sans-serif;
+}
+
+.jumbotron-fluid hr {
+  border-top: 1px solid #2A2A72;
+}
+
+#body .table {
+  font-family: 'Muli', sans-serif;
+  width: 75%;
+  margin: 0 auto;
+  color: white;
+  border: none;
+  border-collapse: collapse;
+  font-size: 14pt;
+}
+
+#body .table thead tr {
+  border: 0;
+  border-top: none;
+}
+
+#body .table a {
+  color: white;
+  text-decoration: none;
+}
+
+#body .table a:hover {
+  color: #F5BB00;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+/*# sourceMappingURL=crypto.css.map */

@@ -1,0 +1,52 @@
+body {
+    // background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+
+    background: #2A2A72;
+}
+
+.jumbotron-fluid {
+    color: white;
+    background-color: #98A6D4;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    h1 {
+
+        font-family: 'B612', sans-serif;
+    }
+
+    hr {
+        border-top: 1px solid #2A2A72;
+    }
+}
+
+#body .table {
+    font-family: 'Muli', sans-serif;
+
+    width: 75%;
+    margin: 0 auto;
+    color: white;
+    border: none;
+    border-collapse: collapse;
+    font-size: 14pt;
+
+    thead tr {
+        border: 0;
+        border-top: none;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: #F5BB00;
+            transition: color .3s;
+        }
+    }
+
+
+}

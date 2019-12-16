@@ -6,7 +6,7 @@ const ejs = require('ejs');
 const anime = require('animejs');
 // const Plotly = require('plotly.js-dist');
 // npm install --save express-ejs-layouts
-var expressLayouts = require('express-ejs-layouts');
+// var expressLayouts = require('express-ejs-layouts');
 ejs.delimiter = '?';
 
 app.use(express.static('public'));
@@ -76,14 +76,17 @@ app.get('/shiba', async (req, res) => {
     }
 });
 
-app.get('/pokemon', async (req, res) => {
+app.get('/weather', async (req, res) => {
     try {
-        pokeData = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=964`);
+        // let lat;
+        // let long;
+        // weatherData = await fetch(`https://api.darksky.net/forecast/a3197f4a0625d96ff09f106347e2f151/${lat},${long}`);
+        // const weatherJson = await weatherData.json();
+        // res.json(weatherJson)
 
-        // const pokeJson = await pokeData.json();
-        // const [...pokemon] = pokeJson.results
-        res.render('pokemonHome', {
-            
+        res.render('weather', {
+            api: 'Dark Sky',
+            apiUrl: 'https://darksky.net/poweredby/',
         })
     } catch (error) {
 

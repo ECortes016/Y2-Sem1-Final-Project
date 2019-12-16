@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.navbar {
+    background-color: #232528 !important;
+}
+
+.page-footer {
+    color: white;
+    background-color: #232528;
+}
+
+.page-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.page-footer a:hover {
+    color: #009FFD;
+    transition: color .3s;
+}
