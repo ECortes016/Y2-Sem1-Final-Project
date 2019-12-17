@@ -6,7 +6,8 @@ const ejs = require('ejs');
 const anime = require('animejs');
 // const Plotly = require('plotly.js-dist');
 // npm install --save express-ejs-layouts
-// var expressLayouts = require('express-ejs-layouts');
+// var expressLayouts = require('express-ejs-layouts')
+
 ejs.delimiter = '?';
 
 app.use(express.static('public'));
@@ -14,6 +15,16 @@ app.use(express.static('public'));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+app.get('/', (req, res) => {
+    try {
+        res.render('index', {
+
+        })
+    } catch (error) {
+        
+    }
+});
 
 app.get('/cryptocurrency', async (req, res) => {
     try {
@@ -65,6 +76,8 @@ app.get('/shiba', async (req, res) => {
 
         const shibuJson = await shibuData.json();
         const [...image] = shibuJson;
+        
+        console.log(image);
 
         res.render('shiba', {
             image: image,
@@ -76,19 +89,21 @@ app.get('/shiba', async (req, res) => {
     }
 });
 
-app.get('/weather', async (req, res) => {
+app.get('/ye', async (req, res) => {
     try {
-        // let lat;
-        // let long;
-        // weatherData = await fetch(`https://api.darksky.net/forecast/a3197f4a0625d96ff09f106347e2f151/${lat},${long}`);
-        // const weatherJson = await weatherData.json();
-        // res.json(weatherJson)
+        yeData = await fetch(`https://api.kanye.rest/`);
 
-        res.render('weather', {
-            api: 'Dark Sky',
-            apiUrl: 'https://darksky.net/poweredby/',
+        const yeJson = await yeData.json();
+
+        const { ...yeQuote } = yeJson;
+
+        res.render('ye', {
+            ye: yeQuote.quote,
+            api: 'Harry',
+            apiUrl: 'https://shibe.online/'
         })
     } catch (error) {
+        console.log(error);
 
     }
 });

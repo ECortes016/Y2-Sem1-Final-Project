@@ -1,10 +1,10 @@
 body {
-  background: #2A2A72;
+  background: #3a3535;
 }
 
 .jumbotron-fluid {
   color: white;
-  background-color: #98A6D4;
+  background-color: #ff7315;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

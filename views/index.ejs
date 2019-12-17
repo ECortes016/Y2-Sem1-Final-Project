@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <?- include ('partials/head')?>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <?- include ('partials/navbar')?>
+    <div class="card-deck">
+        <div class="card">
+          <a href="/cryptocurrency"
+            ><img src="images/cryptoHeader.jpg" class="card-img-top" alt="rnm" />
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Cryptocurrency</h5>
+            <p class="card-text">
+              Top 50 list of Cryptocurrency
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Data from:
+              <a href="https://rickandmortyapi.com/">The Rick And Morty API</a>
+            </small>
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="/shiba"
+            ><img src="images/shiba.jpg" class="card-img-top" alt="breakingBad"
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">Shiba Inu</h5>
+            <p class="card-text">
+              Grab a random picture of a shiba inu
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Data from:
+              <a href="https://breakingbadapi.com/"
+                >The Breaking Bad API</a
+              ></small
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <a href="/ye"
+            ><img src="images/ye.jpg" class="card-img-top" alt="StarWars"
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">Kanye West</h5>
+            <p class="card-text">
+              Get a random quote from the man himself, Kanye West.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"
+              >Data from: <a href="https://coinranking.com/">SWAPI</a></small
+            >
+          </div>
+        </div>
+      </div>
+
+      <?- include ('partials/footer') ?>
+</body>
+</html>

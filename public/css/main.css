@@ -12,6 +12,10 @@ body {
     background-color: #232528 !important;
 }
 
+.navbar a {
+    color: white;
+}
+
 .page-footer {
     color: white;
     background-color: #232528;

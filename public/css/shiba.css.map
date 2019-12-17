@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "shiba.scss"
+    ],
+    "names": [],
+    "file": "shiba.css"
+}
