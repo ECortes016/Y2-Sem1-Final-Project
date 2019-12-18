@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,GAAG;EACrB,MAAM,EAAE,KAAK;CAChB",
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,iDAAiD;CAMtE;;AAPD,AAEI,IAFA,CAEA,gBAAgB,CAAC;EAEb,gBAAgB,EAAE,iDAAiD;EACnE,MAAM,EAAE,KAAK;CAChB",
     "sources": [
         "coin.scss"
     ],

@@ -1,8 +1,8 @@
 body {
-    background-color: red;
-    height: 100vh;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    .jumbotron-fluid {
+        // background-color: red;
+        background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+        height: 100vh;
+    }
 }
-
-// Color Gradients: https://webgradients.com/
-// Color Palette: https://coolors.co/c2f970-2a2a72-f5bb00-232528-98a6d4 
-// Fonts: https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html

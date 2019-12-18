@@ -1,0 +1,21 @@
+.image { 
+    position: relative; 
+    height: 100vh;
+    color: white;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+    }
+    h2 { 
+        position: absolute; 
+        top: 200px; 
+        padding-left: 15px;; 
+        width: 40%; 
+        font-size: 16pt;
+     }
+     a {
+         color: grey;
+     }
+ }

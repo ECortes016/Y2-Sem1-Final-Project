@@ -2,9 +2,9 @@
   "name": "y2-sem1-final-project",
   "version": "1.0.0",
   "description": "Level 1 Demonstrate basic understanding and application of client-side & server-side javascript.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

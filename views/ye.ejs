@@ -4,19 +4,20 @@
 <head>
   <title>Kanye Quotes</title>
   <?- include ('partials/head') ?>
-  
+  <link rel="stylesheet" href="/css/ye.css">
 </head>
 
 <body>
   <?- include ('partials/navbar') ?>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="images/kanye.jpg" alt="Card image cap">
-  </div>
-  <div class="card-body">
-    <p class="card-text"><?= ye ?></p>
-    <a name="" id="" class="btn btn-primary" href="/ye" role="button">New Quote</a>
-  </div>
+
+  <div class="image">
+
+    <img class="imgCover" src="images/ye.jpg" alt="" />
+    
+    <h2 id="text"><?= ye ?><br><a href="/ye">New Quote</a></h2>
+
+</div>
 
   <?- include ('partials/footer') ?>
 </body>

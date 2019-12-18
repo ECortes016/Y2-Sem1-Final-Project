@@ -1,5 +1,9 @@
 body {
-  background-color: red;
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+body .jumbotron-fluid {
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   height: 100vh;
 }
 /*# sourceMappingURL=coin.css.map */

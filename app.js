@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
@@ -16,10 +17,11 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+
 app.get('/', (req, res) => {
     try {
         res.render('index', {
-
+            
         })
     } catch (error) {
         
@@ -72,12 +74,12 @@ app.get('/cryptocurrency/coin-info/:coin_id', async (req, res) => {
 
 app.get('/shiba', async (req, res) => {
     try {
-        shibuData = await fetch(`http://shibe.online/api/shibes?count=[1-100]&urls=true`);
+        shibuData = await fetch(`http://shibe.online/api/shibes?count=[1=100]&urls=true`);
 
         const shibuJson = await shibuData.json();
         const [...image] = shibuJson;
         
-        console.log(image);
+        // console.log(image);
 
         res.render('shiba', {
             image: image,
@@ -99,8 +101,8 @@ app.get('/ye', async (req, res) => {
 
         res.render('ye', {
             ye: yeQuote.quote,
-            api: 'Harry',
-            apiUrl: 'https://shibe.online/'
+            api: 'kanye.rest',
+            apiUrl: 'https://kanye.rest/'
         })
     } catch (error) {
         console.log(error);
